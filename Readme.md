@@ -1,0 +1,11 @@
+**Commit 1 Reflection**
+Pada implementasi ini, saya mempelajari dasar pembuatan server sederhana menggunakan Rust dengan TcpListener dan TcpStream. Program melakukan binding ke alamat lokal dan mendengarkan koneksi yang masuk, lalu setiap koneksi diproses melalui fungsi terpisah. Hal ini membantu saya memahami alur dasar bagaimana server menerima dan menangani request dari client.
+Dalam prosesnya, saya juga belajar membaca HTTP request menggunakan BufReader dan iterator seperti .lines(), .map(), dan .take_while(). Dengan pendekatan ini, saya dapat mengambil bagian header dari request hingga mencapai baris kosong sebagai penanda akhir header. Ini memberi saya pemahaman lebih jelas tentang struktur dasar HTTP request dan bagaimana cara memprosesnya secara manual.
+Selain itu, saya menyadari bahwa penggunaan .unwrap() untuk error handling masih bersifat sederhana dan berisiko menyebabkan panic. Dari sini, saya mendapatkan insight bahwa pengembangan selanjutnya perlu mencakup error handling yang lebih baik, serta penambahan fitur seperti HTTP response dan concurrency agar server menjadi lebih optimal dan mendekati implementasi di dunia nyata.
+
+**Commit 2 Reflection**
+Pada tahap ini, saya berhasil mengembangkan server sederhana di Rust sehingga tidak hanya menerima request, tetapi juga dapat mengirimkan response berupa halaman HTML. Dengan menggunakan TcpListener dan TcpStream, server mampu menangani koneksi masuk dan memproses HTTP request secara manual, yang memberi saya pemahaman lebih dalam tentang bagaimana komunikasi client-server bekerja di level rendah.
+
+Saya juga belajar bagaimana membaca file HTML menggunakan fs::read_to_string dan menyusunnya menjadi HTTP response lengkap dengan status line dan header seperti Content-Length. Proses formatting response ini membantu saya memahami struktur dasar HTTP response, serta bagaimana browser dapat menampilkan konten berdasarkan data yang dikirim oleh server.
+
+Selain itu, saya mulai menyadari pentingnya penanganan error yang lebih baik karena penggunaan .unwrap() masih berisiko menyebabkan program crash. Ke depannya, saya ingin menambahkan fitur seperti routing sederhana (misalnya membedakan path request), concurrency untuk menangani banyak client sekaligus, serta error handling yang lebih aman agar server menjadi lebih robust dan mendekati implementasi nyata.
