@@ -9,3 +9,10 @@ Pada tahap ini, saya berhasil mengembangkan server sederhana di Rust sehingga ti
 Saya juga belajar bagaimana membaca file HTML menggunakan fs::read_to_string dan menyusunnya menjadi HTTP response lengkap dengan status line dan header seperti Content-Length. Proses formatting response ini membantu saya memahami struktur dasar HTTP response, serta bagaimana browser dapat menampilkan konten berdasarkan data yang dikirim oleh server.
 
 Selain itu, saya mulai menyadari pentingnya penanganan error yang lebih baik karena penggunaan .unwrap() masih berisiko menyebabkan program crash. Ke depannya, saya ingin menambahkan fitur seperti routing sederhana (misalnya membedakan path request), concurrency untuk menangani banyak client sekaligus, serta error handling yang lebih aman agar server menjadi lebih robust dan mendekati implementasi nyata.
+
+**Commit 3 Reflection**
+Pada tahap ini, saya berhasil meningkatkan fungsionalitas server dengan menambahkan routing sederhana berdasarkan request line. Dengan membaca baris pertama dari HTTP request, server dapat membedakan antara permintaan ke root path (/) dan permintaan lainnya. Hal ini memberikan pemahaman yang lebih jelas tentang bagaimana server menentukan response berdasarkan endpoint yang diminta oleh client.
+
+Saya juga mengimplementasikan pengiriman response yang berbeda, yaitu halaman hello.html untuk request yang valid dan 404.html untuk request yang tidak dikenali. Dengan ini, saya belajar bagaimana status code seperti 200 OK dan 404 NOT FOUND digunakan dalam HTTP, serta bagaimana server dapat memberikan feedback yang sesuai kepada client melalui konten yang berbeda.
+
+Selain itu, proses ini membuat saya semakin memahami pentingnya struktur HTTP request dan response, sekaligus menyadari bahwa implementasi saat ini masih sederhana. Ke depannya, saya ingin mengembangkan sistem routing yang lebih fleksibel, meningkatkan error handling tanpa .unwrap(), serta menambahkan concurrency agar server dapat menangani banyak request secara efisien.
